@@ -1,0 +1,93 @@
+﻿@model List<ToDo>;
+@{
+    ViewData["Title"] = "To do List";
+}
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+@functions{
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    @*<link rel="stylesheet" href="style.css">*@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    @*<script src="script.js"></script>*@
+</head>
+<body>
+    <div class="container w-50" id="con" style="margin-top: 20vh;">
+        <div class="row">
+            <div class="col-12">
+                <h1>Todo List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="margin-bottom: 20px;">
+                <form action="/" method="post" class="input-group mb-3">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Add New Task ..."
+                           aria-describedby="button-addon2"
+                           name="name" />
+                    <button class="btn btn-primary" type="submit">
+                        +
+                    </button>
+                </form>
+            </div>
+        </div>
+        @foreach (ToDo item in Model)
+        {
+            @if (!item.Deleted)
+            {
+                <div class="row showItem" style="border-bottom: 0.5px solid lightgray; margin-bottom: 5px;">
+                    <div class="col-10" onclick="location.href='@Url.Action("Check", item)'">
+                        <h2 
+                            @if (item.Зачеркнуто)
+                            {
+                                @:class="checked"
+                            }
+                             >@item.Name</h2>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-success" onclick="location.href='@Url.Action("Check", item)'">✓</button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", item)'">🗑</button>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+
+    <div class="container w-50" id="deletedList">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h1>Deleted:</h1>
+            </div>
+        </div>
+        @foreach (ToDo item in Model)
+        {
+            @if (item.Deleted)
+            {
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="deleted">@item.Name</h2>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+</body>
+</html>

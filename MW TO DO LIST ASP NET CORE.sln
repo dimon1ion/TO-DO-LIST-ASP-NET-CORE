@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MW TO DO LIST ASP NET CORE", "MW TO DO LIST ASP NET CORE\MW TO DO LIST ASP NET CORE.csproj", "{8A670771-2A96-49FE-87E9-59E4E813CEF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A670771-2A96-49FE-87E9-59E4E813CEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A670771-2A96-49FE-87E9-59E4E813CEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A670771-2A96-49FE-87E9-59E4E813CEF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A670771-2A96-49FE-87E9-59E4E813CEF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {138C175B-7146-4C86-8E72-246657B400FB}
+	EndGlobalSection
+EndGlobal
